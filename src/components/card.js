@@ -52,7 +52,7 @@ const Card = (article) => {
 
 const cardAppender = (selector) => {
   // TASK 6
-  // ---------------------
+  // --------------------
   // Implement this function that takes a css selector as its only argument.
   // It should obtain articles from this endpoint: `https://lambda-times-api.herokuapp.com/articles`
   // However, the articles do not come organized in a single, neat array. Inspect the response closely!
@@ -72,17 +72,12 @@ const cardAppender = (selector) => {
               const newCard = Card(v);
               cardSelector.appendChild(newCard);
             })
-            
-            }
+          }
           
     })
     .catch(error => {
       error
     })
-
-    const testCard = Card({headline: "Test Headline", authorName: "Test author name"});
-    // cardSelector.appendChild(testCard);
-
 }
 
 export { Card, cardAppender }
