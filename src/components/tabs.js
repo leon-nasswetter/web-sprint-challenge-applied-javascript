@@ -25,6 +25,7 @@ const Tabs = (topics) => {
     newTab.classList.add("tab");
     topicsComp.classList.add("topics")
     newTab.textContent = tab;
+    
   });
 
   return topicsComp
@@ -44,9 +45,9 @@ const tabsAppender = (selector) => {
   axios
     .get("https://lambda-times-api.herokuapp.com/topics")
     .then(data => {
-      console.log(data)
       const newTab = Tabs(data.data.topics);
       tabSelector.appendChild(newTab);
+      
       
     })
     .catch(error => {
